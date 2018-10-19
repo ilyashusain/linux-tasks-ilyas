@@ -1,0 +1,40 @@
+read num
+i=2
+j=$num
+
+
+while [ "$i" -lt "$j" ]
+        do
+                if [ `expr $j % $i` -eq 0 ]
+                then
+                        echo "$j is not a prime number"
+                        exit
+                fi
+        i=`expr $i + 1`
+        done
+        echo "$j is a prime number "
+
+
+
+
+#until [ "$j" -eq "2" ]
+#do
+
+i=2
+j=$((j+1))
+
+
+while [ "$i" -lt "$j" ]
+        do
+                if [ `expr $j % $i` -eq 0 ]
+                then
+                        echo "$j is not a prime number"
+                        exit
+                fi
+        i=`expr $i + 1`
+        done
+        echo "$j is a prime number "
+
+
+
+

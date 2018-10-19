@@ -1,0 +1,23 @@
+read -p "Please enter a cap: " cap
+declare -a arr
+re='^[0-9]+$'
+
+
+x=0
+while [[ x -le cap ]] 
+do
+	arr+=("$x")
+	x=$((x+1))
+
+		if [ $((x % 3)) == 0 ]; then
+			echo Fizz!;
+			x=$((x+1));
+			cap=$((cap-1))
+		fi
+		
+		if [ $((x % 5)) == 0 ]; then
+                        echo Buzz!;
+                        x=$((x+1));
+                fi
+	echo $x
+done

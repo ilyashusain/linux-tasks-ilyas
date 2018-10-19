@@ -1,0 +1,3 @@
+ps
+read -p "Any process ID initialized by "1...." will be stopped. Please enter a a process ID: " answer
+kill $pid

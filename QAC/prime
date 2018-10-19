@@ -1,0 +1,28 @@
+read limit
+i=2
+#seq 2 1 $limit
+
+vals=($(seq 2 1 $limit))
+
+echo "${vals[@]}"
+#echo "${vals[--$limit]}"
+
+#for i in ${vals[@]}
+while [ $i -lt $limit ]
+do
+	if [ `$i  % $limit` -eq 0 ] then
+		echo "Not prime"
+		exit
+	fi
+	i=`$i + 1`
+done
+
+
+#for i in "${vals[@]}"
+#	do
+#		if [ $limit % {vals[@]} -eq 0 ] 
+#			then
+#				echo "not prime"
+#		fi
+#done
+		

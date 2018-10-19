@@ -1,0 +1,9 @@
+read -p "Please enter a username: " answer
+id > ID
+echo "Your user ID is: "; id -u
+echo "Your group ID is: "; id -g
+~                                                                                                                   
+~                                                                                                                   
+~                                                                                                                   
+~                                                                                                                   
+~                                                                   

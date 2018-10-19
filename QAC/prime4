@@ -1,0 +1,22 @@
+d num
+i=2
+j=$num
+
+until [ "$j" -eq "2" ]
+do
+
+        while [ "$i" -lt "$j" ]
+        do
+                if [ `expr $j % $i` -eq 0 ]
+                then
+                        echo "$j is not a prime number"
+                        break
+                fi
+        i=`expr $i + 1`
+        done
+        echo "$j is a prime number "
+
+i=2
+j=$((j-1))
+#echo $j
+done

@@ -1,0 +1,2 @@
+read -p "Please enter any number of digits: " answer
+echo $answer
