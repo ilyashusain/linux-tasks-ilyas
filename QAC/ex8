@@ -1,0 +1,3 @@
+echo "Your user ID is:"; id | awk '{ print $1 }' | cut -d"=" -f2 | cut -d"(" -f1
+echo "Your group ID is:"; id | awk '{ print $2 }' | cut -d"=" -f2 | cut -d"(" -f1
+echo "Your group is:"; id | awk '{ print $3 }' | cut -d"=" -f2 | cut -d"(" -f1

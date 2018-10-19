@@ -1,0 +1,6 @@
+read -p "Please enter directory: " ans
+
+ls -alF ~/ans | wc -l				 #no. files
+ls -alF ans -tr | tail -n 1 | cut -d" " -f8 	#time
+sudo du -ah | sort -n -r | head -n 1	 #largest
+sudo du -ah | sort -n | head -n 1	 #smallest

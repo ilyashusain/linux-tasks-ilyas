@@ -1,0 +1,36 @@
+read -p "Please enter your number: " answer
+if [ $((answer % 2)) -eq 0 ];
+	then echo "$answer even"
+read -p "Do you wish to delete the file? " answer2
+while true
+do
+  case $answer2 in
+   [yY]* ) rm file3
+           break;;
+
+   [nN]* ) touch file3 tee file3
+           touch /home/ihusain1994/changedFileName
+           break;;
+
+   * )
+  esac
+done;
+	else echo "$answer odd"
+
+read -p "Do you wish to delete the file? " answer2
+while true
+do
+  case $answer2 in
+   [yY]* ) rm file3
+           break;;
+
+   [nN]* ) touch file3
+	   touch /home/ihusain1994/changedFileName
+	   break;;
+
+   * )
+  esac
+done;
+
+
+fi

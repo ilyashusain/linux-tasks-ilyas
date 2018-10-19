@@ -1,0 +1,12 @@
+#read -p "You are creating a new file. Enter "Lock" if you wish to block access to file from other users." > userd
+
+read varname
+
+touch filelocker$varname
+
+chmod go= filelockerLock
+
+#if $1 -eq Lock; then
+#	chmod go= filelocker$1;
+#	echo "You have created a file called:"; $filelocker$1;
+#fi
