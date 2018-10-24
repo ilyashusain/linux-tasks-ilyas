@@ -1,0 +1,458 @@
+b1x = [[0,0,0,0,0,0,0,0,0,0],
+     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],]
+
+b1y = [[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],]
+
+b1L = [[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0],]
+
+
+
+class Shark:
+    def swim(self):
+        print("The shark is swimming.")
+
+sammy = Shark()
+#sammy.swim()
+
+class carrier_x():
+    def xmove(self, row, s):
+        d1s = 1
+        d1e = 1
+        d1m1 = 1
+        d1m2 = 1
+        d1m3 = 1
+        self.row = row
+        self.s = s
+        e = s + 4
+        x = b1y[row]
+        x[s] = d1s
+        x[e] = d1e
+        x[e - 3] = d1m1
+        x[e - 2] = d1m2
+        x[e - 1] = d1m3
+
+class carrier_y():
+    def ymove(self, col, s):
+        d2s = 1
+        d2e = 1
+        d2m1 = 1
+        d2m2 = 1
+        d2m3 = 1
+        self.col=col
+        self.s=s
+        c = s
+        s = col
+
+        y = b1y[c]
+        y[s] = d2s
+        ye = b1y[c + 4]
+        ye[s] = d2e
+        ym1 = b1y[c + 1]
+        ym1[s] = d2m1
+        ym2 = b1y[c + 2]
+        ym2[s] = d2m2
+        ym3 = b1y[c + 3]
+        ym3[s] = d2m3
+
+class carrier_x2():
+    def xmove(self, row, s):
+        d1s = 1
+        d1e = 1
+        d1m1 = 1
+        d1m2 = 1
+        d1m3 = 1
+        self.row = row
+        self.s = s
+        e = s + 4
+        x = b1x[row]
+        x[s] = d1s
+        x[e] = d1e
+        x[e - 3] = d1m1
+        x[e - 2] = d1m2
+        x[e - 1] = d1m3
+
+class carrier_y2():
+    def ymove(self, col, s):
+        d2s = 1
+        d2e = 1
+        d2m1 = 1
+        d2m2 = 1
+        d2m3 = 1
+        self.col=col
+        self.s=s
+        c = s
+        s = col
+
+        y = b1x[c]
+        y[s] = d2s
+        ye = b1x[c + 4]
+        ye[s] = d2e
+        ym1 = b1x[c + 1]
+        ym1[s] = d2m1
+        ym2 = b1x[c + 2]
+        ym2[s] = d2m2
+        ym3 = b1x[c + 3]
+        ym3[s] = d2m3
+
+class destroyer_x():
+    def xmove(self, row, s):
+        d1s=1
+        d1e = 1
+        d1m1 = 1
+        d1m2 = 1
+        self.row=row
+        self.s=s
+        e = s + 3
+        x = b1y[row]
+        x[s] = d1s
+        x[e] = d1e
+        x[e - 2] = d1m1
+        x[e - 1] = d1m2
+
+class destroyer_y():
+    def ymove(self, col, s):
+        d2s = 1
+        d2e = 1
+        d2m1 = 1
+        d2m2 = 1
+        self.col=col
+        self.s=s
+        c = s
+        s = col
+
+        y = b1y[c]
+        y[s] = d2s
+        ye = b1y[c + 3]
+        ye[s] = d2e
+        ym1 = b1y[c + 1]
+        ym1[s] = d2m1
+        ym2 = b1y[c + 2]
+        ym2[s] = d2m2
+
+class destroyer_x2():
+    def xmove(self, row, s):
+        d1s=1
+        d1e = 1
+        d1m1 = 1
+        d1m2 = 1
+        self.row=row
+        self.s=s
+        e = s + 3
+        x = b1x[row]
+        x[s] = d1s
+        x[e] = d1e
+        x[e - 2] = d1m1
+        x[e - 1] = d1m2
+
+class destroyer_y2():
+    def ymove(self, col, s):
+        d2s = 1
+        d2e = 1
+        d2m1 = 1
+        d2m2 = 1
+        self.col=col
+        self.s=s
+        c = s
+        s = col
+
+        y = b1x[c]
+        y[s] = d2s
+        ye = b1x[c + 3]
+        ye[s] = d2e
+        ym1 = b1x[c + 1]
+        ym1[s] = d2m1
+        ym2 = b1x[c + 2]
+        ym2[s] = d2m2
+
+#Carrier = carrier_x()
+#Carrier.xmove(2,3)
+Carrier = carrier_y()
+Carrier.ymove(0,0)
+
+#Carrier = carrier_x2()
+#Carrier.xmove(2,2)
+Carrier = carrier_y2()
+Carrier.ymove(0,0)
+
+#Destroyer = destroyer_x()
+#Destroyer.xmove(1,3)
+#Destroyer = destroyer_y()
+#Destroyer.ymove(9,1)
+
+#Destroyer = destroyer_x2()
+#Destroyer.xmove(1,3)
+#Destroyer = destroyer_y2()
+#Destroyer.ymove(8,1)
+
+
+
+
+for i in b1y:
+    string =""
+    for j in i:
+        string += str(j) + ", "
+    print(string)
+
+print("----------------------------")
+
+for i in b1x:
+    string =""
+    for j in i:
+        string += str(j) + ", "
+    print(string)
+
+
+#p=p1
+#q=q1
+
+# print(b1x)
+# print(b1x[1])
+# p=b1x[1]
+# p[0] = 0
+# b1x[1] = p
+# print(b1x[1])
+#p=b1x[0]
+#print(p)
+#p = [list(map(int, x)) for x in p]
+#print(p)
+#for i in p[i]:
+#    if p[i]==1:
+#        p[i]=0
+#        p = [list(map(str, x)) for x in p]
+        #b1x[0]=p
+#print(b1x[1])
+
+#if b1x[0][0] == 1:
+#    b1x[0][0] = 0
+sum1=sum(b1x[0])+sum(b1x[1])+sum(b1x[2]) +sum(b1x[3])+sum(b1x[4])+sum(b1x[5])+sum(b1x[6])+sum(b1x[7])+sum(b1x[8])+sum(b1x[9])
+#print(sum1)
+sum2=sum(b1y[0])+sum(b1y[1])+sum(b1y[2]) +sum(b1y[3])+sum(b1y[4])+sum(b1y[5])+sum(b1y[6])+sum(b1y[7])+sum(b1y[8])+sum(b1y[9])
+
+if b1y == b1L:
+    print("Game ends")
+
+#print(sum1)
+#print(sum1)
+#print(sum1)
+
+input_x = input("(p1) Enter y coordinate: ")
+input_y = input("Enter x coordinate:")
+#print("you entered " + input_x + "," + input_y)
+input_x=int(input_x)
+input_y=int(input_y)
+while sum1!=0 or sum2!=0:
+    while b1x[input_x][input_y] == 1:
+
+        b1x[input_x][input_y] = 0
+
+        sum1 = sum(b1x[0]) + sum(b1x[1]) + sum(b1x[2]) + sum(b1x[3]) + sum(b1x[4]) + sum(b1x[5]) + sum(b1x[6]) + sum(
+            b1x[7]) + sum(b1x[8]) + sum(b1x[9])
+        sum2 = sum(b1y[0]) + sum(b1y[1]) + sum(b1y[2]) + sum(b1y[3]) + sum(b1y[4]) + sum(b1y[5]) + sum(b1y[6]) + sum(
+            b1y[7]) + sum(b1y[8]) + sum(b1y[9])
+        #print(sum1)
+        #print(sum2)
+        if sum1 == 0:
+            print("----------------")
+            print("PLAYER 2 LOST")
+            print("----------------")
+            for i in b1y:
+                string = ""
+                for j in i:
+                    string += str(j) + ", "
+                print(string)
+            print("++++----------------------------++++")
+            for i in b1x:
+                string = ""
+                for j in i:
+                    string += str(j) + ", "
+                print(string)
+            break
+        if sum2 == 0:
+            print("----------------")
+            print("PLAYER 1 LOST")
+            print("----------------")
+            for i in b1y:
+                string = ""
+                for j in i:
+                    string += str(j) + ", "
+                print(string)
+            print("++++----------------------------++++")
+            for i in b1x:
+                string = ""
+                for j in i:
+                    string += str(j) + ", "
+                print(string)
+            break
+
+
+        #input_x = input("(p1) Enter y coordinate: ")
+        #input_y = input("Enter x coordinate:")
+        #input_x = int(input_x)
+        #input_y = int(input_y)
+
+        for i in b1y:
+            string = ""
+            for j in i:
+                string += str(j) + ", "
+            print(string)
+        print("----------------------------")
+        for i in b1x:
+            string = ""
+            for j in i:
+                string += str(j) + ", "
+            print(string)
+
+        input_x = input("(p1) Enter y coordinate: ")
+        input_y = input("Enter x coordinate:")
+        input_x = int(input_x)
+        input_y = int(input_y)
+
+        sum1 = sum(b1x[0]) + sum(b1x[1]) + sum(b1x[2]) + sum(b1x[3]) + sum(b1x[4]) + sum(b1x[5]) + sum(b1x[6]) + sum(
+            b1x[7]) + sum(b1x[8]) + sum(b1x[9])
+        sum2 = sum(b1y[0]) + sum(b1y[1]) + sum(b1y[2]) + sum(b1y[3]) + sum(b1y[4]) + sum(b1y[5]) + sum(b1y[6]) + sum(
+            b1y[7]) + sum(b1y[8]) + sum(b1y[9])
+        #print(sum1)
+        #print(sum2)
+        if sum1 == 0:
+            print("Player 1 lost")
+            break
+        if sum2 == 0:
+            print("Player 2 lost")
+            break
+        #if b1x[v][u] == 0:
+        #    break
+
+        if b1y == b1L:
+            print("Game ends")
+
+    if sum1 == 0:
+        break
+    if sum2 == 0:
+        break
+
+    for i in b1y:
+        string = ""
+        for j in i:
+            string += str(j) + ", "
+        print(string)
+    print("----------------------------")
+    for i in b1x:
+        string = ""
+        for j in i:
+            string += str(j) + ", "
+        print(string)
+
+
+    input_x = input("(p2) Enter y coordinate: ")
+    input_y = input("Enter x coordinate:")
+    input_x = int(input_x)
+    input_y = int(input_y)
+
+    while b1y[input_x][input_y] == 1:
+        b1y[input_x][input_y] = 0
+
+        sum1 = sum(b1x[0]) + sum(b1x[1]) + sum(b1x[2]) + sum(b1x[3]) + sum(b1x[4]) + sum(b1x[5]) + sum(b1x[6]) + sum(
+            b1x[7]) + sum(b1x[8]) + sum(b1x[9])
+        sum2 = sum(b1y[0]) + sum(b1y[1]) + sum(b1y[2]) + sum(b1y[3]) + sum(b1y[4]) + sum(b1y[5]) + sum(b1y[6]) + sum(
+            b1y[7]) + sum(b1y[8]) + sum(b1y[9])
+        # print(sum1)
+        # print(sum2)
+        if sum1 == 0:
+            print("----------------")
+            print("PLAYER 2 LOST")
+            print("----------------")
+            break
+        if sum2 == 0:
+            print("----------------")
+            print("PLAYER 1 LOST")
+            print("----------------")
+            for i in b1y:
+                string = ""
+                for j in i:
+                    string += str(j) + ", "
+                print(string)
+            print("++++----------------------------++++")
+            for i in b1x:
+                string = ""
+                for j in i:
+                    string += str(j) + ", "
+                print(string)
+            break
+
+
+        for i in b1y:
+            string = ""
+            for j in i:
+                string += str(j) + ", "
+            print(string)
+        print("----------------------------")
+        for i in b1x:
+            string = ""
+            for j in i:
+                string += str(j) + ", "
+            print(string)
+
+        input_x = input("(p2) Enter y coordinate: ")
+        input_y = input("Enter x coordinate:")
+        input_x = int(input_x)
+        input_y = int(input_y)
+
+    if sum1 == 0:
+        break
+    if sum2 == 0:
+        break
+
+        #input_x = input("(p2) Enter y coordinate: ")
+        #input_y = input("Enter x coordinate:")
+        #input_x = int(input_x)
+        #input_y = int(input_y)
+
+    #if sum1==0:
+    #    print("Player 1 lost")
+    #    break
+    #if sum2==0:
+    #    print("Player 2 lost")
+    #    break
+
+    input_x = input("(p1) Enter y coordinate: ")
+    input_y = input("Enter x coordinate:")
+    input_x = int(input_x)
+    input_y = int(input_y)
+
+#for i in b1y:
+    # string = ""
+    # for j in i:
+    #     string += str(j) + ", "
+    # print(string)
+# print("++++----------------------------++++")
+# for i in b1x:
+#     string = ""
+#     for j in i:
+#         string += str(j) + ", "
+#     print(string)
