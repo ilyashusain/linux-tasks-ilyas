@@ -1,0 +1,27 @@
+read -p "Please enter a number: " num
+i=2
+j=$num
+
+until [ "$j" -eq "2" ]
+do
+
+        while [ "$i" -lt "$j" ]
+        do
+                if [ `expr $j % $i` -eq 0 ]
+                then
+                        break
+                fi
+
+                if [ `expr $j - $i` -eq 1 ]
+                then
+                        echo $j
+                        break
+                fi
+        i=`expr $i + 1`
+        done
+
+i=2
+j=$((j-1))
+done
+echo 2
+echo 1
